@@ -47,7 +47,11 @@ const quotes = [
 ];
 console.log(quotes);
   // Return variable storing the random quote object
-
+  function getRandomQuote() {
+    let randomNumber = Math.floor(Math.random() * (quotes.length) );
+  
+    return quotes[randomQuote];
+  }
 
 /***
  * `printQuote` function
