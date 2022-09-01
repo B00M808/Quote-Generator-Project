@@ -45,10 +45,12 @@ const quotes = [
   year: 2013
 },
 ];
-console.log(quotes);
+
   // Return variable storing the random quote object
+  //Created the getRandomQuote function
+
   function getRandomQuote() {
-    let randomNumber = Math.floor(Math.random() * (quotes.length) );
+    let randomQuote = Math.floor(Math.random() * (quotes.length) );
   
     return quotes[randomQuote];
   }
@@ -56,7 +58,26 @@ console.log(quotes);
 /***
  * `printQuote` function
 ***/
-
+//Created the printQuote function
+function printQuote() {
+  let motivationalQuote = {};
+  motivationalQuote = getRandomQuote(); 
+  console.log(`motivalQuote: ${motivationalQuote.quote}`);
+  let html = "<p class = 'quote'>" + motivationalQuote.quote + "</p>";
+  html += "<p class = 'source'> " + motivationalQuote.source;
+console.log(getRandomQuote());
+  if ('citation' + motivationalQuote) {
+    html += "<span class = 'citation'> " + motivationalQuote.citation + "</span>";
+  } 
+  if ('year' + motivationalQuote) {
+    html += "<span class = 'year'>" + motivationalQuote.year + "</span>";
+  }
+  let message = 
+    `<p class = 'quote'>${result.quote}</p>;
+    <p class = 'source'>${result.source}</p>;
+    <span class = 'citation'>${result.citation}</span>;
+    <span class = 'year'> ${result.year}</span>;`
+}
 
 
 /***
