@@ -37,7 +37,7 @@ const quotes = [
   quote: 'Your word is your wand. The words you speak create your own destiny.',
   source: 'Florence Scovel-Shinn',
   citation: 'The Writings of Florence Scovel Shinn',
-  year: 1925-1945
+  year: 1925
 },
 {
   quote: 'If you want a new outcome, you will have to break the habit of being yourself, and reinvent a new self.',
@@ -46,8 +46,6 @@ const quotes = [
   year: 2013
 },
 ];
-
-let quotationBox = document.querySelector(".quote-box");
 
   // Return variable storing the random quote object
   //Created the getRandomQuote function
@@ -58,21 +56,31 @@ let quotationBox = document.querySelector(".quote-box");
   };
   // getRandomQuote();
 
+ //If Statement
 /***
  * `printQuote` function
 ***/
+
 //Created the printQuote function to display for end-user
 
 function printQuote() {
   let motivationalQuote = getRandomQuote();
 
-  quotationBox.innerHTML = `
-  <div id="quote-box" class="quote-box">
-        <p class="quote">${motivationalQuote?.quote}</p>
-        <p class="source">${motivationalQuote?.source}<span class="citation">${motivationalQuote?.citation}</span><span class="year">${motivationalQuote?.year}</span></p>
-      </div>
-    </div>
-  `;
+  let html = "";
+  if(motivationalQuote){
+    html = html + `<p class="quote">${motivationalQuote.quote}</p>`;
+    html = html + `<p class="source">${motivationalQuote.source}`;
+    
+  }
+  if(motivationalQuote.citation){
+    html = html + `<span class="citation">${motivationalQuote.citation}</span>`;
+  }
+
+  if(motivationalQuote.year){
+    html = html + ` <span class="year">${motivationalQuote.year}</span>`;
+  }
+  html = html + `</p>`;
+  document.getElementById('quote-box').innerHTML = html; 
 }
 
 /***
