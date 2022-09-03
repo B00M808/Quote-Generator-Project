@@ -77,7 +77,7 @@ function printQuote() {
   }
 
   if(motivationalQuote.year){
-    html = html + ` <span class="year">${motivationalQuote.year}</span>`;
+    html = html + `<span class="year">${motivationalQuote.year}</span>`;
   }
   html = html + `</p>`;
   document.getElementById('quote-box').innerHTML = html; 
