@@ -46,39 +46,51 @@ const quotes = [
 },
 ];
 
+let quotationBox = document.querySelector(".quote-box");
+
   // Return variable storing the random quote object
   //Created the getRandomQuote function
 
   function getRandomQuote() {
-    let randomQuote = Math.floor(Math.random() * (quotes.length) );
-  
-    return quotes[randomQuote];
-  }
+    const randomNumber = Math.floor(Math.random() * (quotes.length) );
+    return quotes[randomNumber];
+  };
+  // getRandomQuote();
 
 /***
  * `printQuote` function
 ***/
-//Created the printQuote function
-function printQuote() {
-  let motivationalQuote = {};
-  motivationalQuote = getRandomQuote(); 
-  console.log(`motivalQuote: ${motivationalQuote.quote}`);
-  let html = "<p class = 'quote'>" + motivationalQuote.quote + "</p>";
-  html += "<p class = 'source'> " + motivationalQuote.source;
-console.log(getRandomQuote());
-  if ('citation' + motivationalQuote) {
-    html += "<span class = 'citation'> " + motivationalQuote.citation + "</span>";
-  } 
-  if ('year' + motivationalQuote) {
-    html += "<span class = 'year'>" + motivationalQuote.year + "</span>";
-  }
-  let message = 
-    `<p class = 'quote'>${result.quote}</p>;
-    <p class = 'source'>${result.source}</p>;
-    <span class = 'citation'>${result.citation}</span>;
-    <span class = 'year'> ${result.year}</span>;`
-}
+//Created the printQuote function to display for end-user.
 
+function printQuote() {
+  let motivationalQuote = getRandomQuote();
+
+  quotationBox.innerHTML = `
+  <div id="quote-box" class="quote-box">
+        <p class="quote">${motivationalQuote?.quote}</p>
+        <p class="source">${motivationalQuote?.source}<span class="citation">${motivationalQuote?.citation}</span><span class="year">${motivationalQuote?.year}</span></p>
+      </div>
+    </div>
+  `;
+
+
+  //console.log(`motivalQuote: ${motivationalQuote.quote}`);
+  
+//   let html = "<p class = 'quote'>" + motivationalQuote.quote + "</p>";
+//   html += "<p class = 'source'> " + motivationalQuote.source;
+// //console.log(getRandomQuote());
+
+//   if (motivationalQuote.citation) {
+//     html += "<span class = 'citation'>" + motivationalQuote.citation + "</span>"}; 
+//   if (motivationalQuote.year) {
+//     html += "<span class = 'year'>" + motivationalQuote.year + "</span>"};
+  }   
+  // let message = `<p class = 'quote'>${result.quote}</p>
+  // <p class = 'source'>${result.source}</p>
+  // <span class = 'citation'>${result.citation}</span>
+  // <span class = 'year'> ${result.year}</span>`
+
+// getRandomQuote();
 
 /***
  * click event listener for the print quote button
