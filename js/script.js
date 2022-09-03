@@ -16,6 +16,7 @@ project 1 - A Random Quote Generator
 ***/
 //Accomplish three tasks: use Math.floor, Math.random and the length of the quotes array
 //utilize the for loop to pass the quotes array as an arguemnt
+//Created and stored quotes in an Array 
 const quotes = [
   {
      quote: 'When you undervalue what you do, the world will undervalue who you are.',
@@ -60,7 +61,7 @@ let quotationBox = document.querySelector(".quote-box");
 /***
  * `printQuote` function
 ***/
-//Created the printQuote function to display for end-user.
+//Created the printQuote function to display for end-user
 
 function printQuote() {
   let motivationalQuote = getRandomQuote();
@@ -72,25 +73,7 @@ function printQuote() {
       </div>
     </div>
   `;
-
-
-  //console.log(`motivalQuote: ${motivationalQuote.quote}`);
-  
-//   let html = "<p class = 'quote'>" + motivationalQuote.quote + "</p>";
-//   html += "<p class = 'source'> " + motivationalQuote.source;
-// //console.log(getRandomQuote());
-
-//   if (motivationalQuote.citation) {
-//     html += "<span class = 'citation'>" + motivationalQuote.citation + "</span>"}; 
-//   if (motivationalQuote.year) {
-//     html += "<span class = 'year'>" + motivationalQuote.year + "</span>"};
-  }   
-  // let message = `<p class = 'quote'>${result.quote}</p>
-  // <p class = 'source'>${result.source}</p>
-  // <span class = 'citation'>${result.citation}</span>
-  // <span class = 'year'> ${result.year}</span>`
-
-// getRandomQuote();
+}
 
 /***
  * click event listener for the print quote button
